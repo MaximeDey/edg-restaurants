@@ -1,0 +1,3 @@
+Copyright (c) 2026 Maxime Dey. Tous droits réservés.
+Ce logiciel ("EDG Restaurants") est la propriété exclusive de Maxime Dey.
+Toute copie, modification, diffusion ou utilisation sans autorisation écrite préalable est interdite.
