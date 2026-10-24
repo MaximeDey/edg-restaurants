@@ -1,0 +1,6 @@
+sauvegardes/
+*.csv
+.env
+*.key
+.DS_Store
+Thumbs.db
