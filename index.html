@@ -6,6 +6,7 @@
 <title>EDG Restaurants</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0b1020">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("edgTheme")||"dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="EDG Restaurants">
@@ -153,7 +154,36 @@ table.sched .adm-row td:first-child{background:#eaf2ff}
   table.sched{min-width:760px}
 }
 @media (hover:none){ button:hover{filter:none} }
-/* ===== Thème sombre EDG ===== */
+/* ===== Thèmes EDG : sombre (défaut), clair, intermédiaire ===== */
+:root{--canvas:#0b1020;--card:#131a2e;--ink:#e6ebf5;--sub:#8b97b3;--line:#26314b;--brand:#4f6df5;--brand-dark:#c9d4ff;--accent:#2dd4bf;
+--open:#3b82f6;--close:#10b981;--med:#e5484d;--adm:#64748b;--wk:#2dd4bf;
+--surf2:#1a2340;--surf2h:#202b4d;--surf2ink:#c9d4ff;--surf3:#0e1527;--ph:#5d6b8a;--th:#182140;
+--conflict:#5b4a12;--conflictink:#ffd873;--dirbg:#5a4410;--dirink:#ffe28a;--dirbar:#fbbf24;--depbg:#5a1f45;--depink:#ffc9e8;--depbar:#f472b6;--admbg:#0f4a5a;--admink:#bdf2ff;--admbar:#22d3ee;
+--r:#1b2540;--rink:#7d8aa8;--topbg:rgba(11,16,32,.82);--evrow:#101830;
+--wkredbg:#3a1a24;--wkredink:#ff9aa8;--badgebg:#2a1f4d;--badgeink:#cdb8ff;--wknumbg:#1d2748;--wknumink:#c9d4ff;
+--infobg:#2e2610;--infoink:#ffd98a;--notebg:#10302b;--noteink:#7ff0d8;--okc:#5ee9b5;--link:#8fb0ff;
+--glow1:rgba(79,109,245,.14);--glow2:rgba(45,212,191,.09);--sheen:rgba(255,255,255,.025);--overlay:rgba(5,8,18,.7);
+--mark:#ffb27a;--activeink:#062b27;--sw:rgba(255,255,255,.06);--swon:#26314b;
+--shadow:0 1px 0 rgba(255,255,255,.03) inset,0 10px 30px rgba(0,0,0,.35);color-scheme:dark}
+html[data-theme="light"]{--canvas:#f2f5fb;--card:#ffffff;--ink:#141a2e;--sub:#5b6685;--line:#dde3f0;--brand:#4f6df5;--brand-dark:#2a3a78;--accent:#0d9488;
+--surf2:#eef2fb;--surf2h:#e2e9f8;--surf2ink:#2a3a78;--surf3:#ffffff;--ph:#98a2bd;--th:#eef2fb;
+--conflict:#fff0b8;--conflictink:#7a5a00;--dirbg:#ffe08a;--dirink:#5c4300;--dirbar:#d99a00;--depbg:#ffd1ea;--depink:#7a1f55;--depbar:#db2777;--admbg:#c9edf8;--admink:#0b4a63;--admbar:#0891b2;
+--r:#edf0f7;--rink:#8a94ad;--topbg:rgba(255,255,255,.9);--evrow:#f6f8fd;
+--wkredbg:#fde8ea;--wkredink:#c0182f;--badgebg:#efe6ff;--badgeink:#5b36a8;--wknumbg:#e6ebfa;--wknumink:#2a3a78;
+--infobg:#fff4d6;--infoink:#7a5a10;--notebg:#e2f6ef;--noteink:#136a4a;--okc:#15803d;--link:#3556d6;
+--glow1:rgba(79,109,245,.08);--glow2:rgba(13,148,136,.06);--sheen:rgba(255,255,255,0);--overlay:rgba(20,26,46,.5);
+--mark:#c2410c;--activeink:#ffffff;--sw:rgba(20,26,46,.06);--swon:#ffffff;
+--shadow:0 1px 2px rgba(20,30,60,.05),0 8px 24px rgba(20,30,60,.08);color-scheme:light}
+html[data-theme="mid"]{--canvas:#2b3556;--card:#354167;--ink:#f2f5fc;--sub:#b9c3de;--line:#4a5887;--brand:#6d86ff;--brand-dark:#e6ebff;--accent:#5eead4;
+--surf2:#425080;--surf2h:#4b5a90;--surf2ink:#e6ebff;--surf3:#2b3556;--ph:#9aa7cc;--th:#3f4c7a;
+--conflict:#6b5a1c;--conflictink:#ffe28a;--dirbg:#6b5413;--dirink:#ffe9a0;--dirbar:#fbbf24;--depbg:#6a2a58;--depink:#ffd3ee;--depbar:#f472b6;--admbg:#1d6076;--admink:#c6f4ff;--admbar:#22d3ee;
+--r:#3d4a75;--rink:#b4bfdf;--topbg:rgba(43,53,86,.88);--evrow:#313c61;
+--wkredbg:#5a2c43;--wkredink:#ffb3c1;--badgebg:#4a3d80;--badgeink:#dccdff;--wknumbg:#44528a;--wknumink:#e6ebff;
+--infobg:#4d4524;--infoink:#ffe9a8;--notebg:#2c5a58;--noteink:#a7f5e6;--okc:#6ee7b7;--link:#a9c0ff;
+--glow1:rgba(109,134,255,.16);--glow2:rgba(94,234,212,.1);--sheen:rgba(255,255,255,.03);--overlay:rgba(15,20,40,.65);
+--mark:#ffc08a;--activeink:#0b2b27;--sw:rgba(255,255,255,.1);--swon:#556399;
+--shadow:0 10px 30px rgba(10,15,35,.35);color-scheme:dark}
+
 /* ---- Mise en page homogène de toutes les catégories (grands écrans) ---- */
 .cardhead{margin-bottom:12px}
 .card.collapsed .cardhead{margin-bottom:0}
@@ -174,74 +204,84 @@ table.sched .adm-row td:first-child{background:#eaf2ff}
 .rushtbl{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:6px;margin:6px 0 0}
 .rushtbl th:first-child,.rushtbl td:first-child{width:64px}
 .rushtbl th,.rushtbl td{border:none;padding:0;background:none;text-align:center;font-size:12px;color:var(--sub)}
-button.rushbtn{background:#1a2340;color:#5d6b8a;border:1px solid var(--line);width:100%;min-width:0;padding:12px 0;font-size:16px}
+button.rushbtn{background:var(--surf2);color:var(--ph);border:1px solid var(--line);width:100%;min-width:0;padding:12px 0;font-size:16px}
 button.rushbtn.on{background:linear-gradient(135deg,#f97316,#e5484d);color:#fff;border-color:transparent}
-.rushmark{font-weight:600;color:#ffb27a;font-size:10px;letter-spacing:0}
-tr[style*="f4f1ec"]{background:#101830!important}
+.rushmark{font-weight:600;color:var(--mark);font-size:10px;letter-spacing:0}
+
+/* ---- Habillage commun (couleurs pilotées par le thème) ---- */
+tr[style*="f4f1ec"]{background:var(--evrow)!important}
 tr[style*="f4f1ec"] td{color:var(--sub)}
 td{color:var(--ink)}
 select.cell{color:#fff}
 .OPEN,.CLOSE,.MED,.ADM{color:#fff}
-
-:root{--bg:#0b1020;--canvas:#0b1020;--card:#131a2e;--ink:#e6ebf5;--sub:#8b97b3;--line:#26314b;
---brand:#4f6df5;--brand-dark:#c9d4ff;--accent:#2dd4bf;--accent-soft:#12302f;
---open:#3b82f6;--close:#10b981;--med:#e5484d;--adm:#64748b;--r:#1b2540;--wk:#2dd4bf;--conflict:#5b4a12;
---shadow:0 1px 0 rgba(255,255,255,.03) inset,0 10px 30px rgba(0,0,0,.35);color-scheme:dark}
-body{font-family:'Inter',system-ui,sans-serif;background:radial-gradient(1200px 500px at 85% -10%,rgba(79,109,245,.14),transparent 60%),radial-gradient(900px 400px at -5% 0%,rgba(45,212,191,.09),transparent 55%),var(--canvas);background-attachment:fixed}
+body{font-family:'Inter',system-ui,sans-serif;background:radial-gradient(1200px 500px at 85% -10%,var(--glow1),transparent 60%),radial-gradient(900px 400px at -5% 0%,var(--glow2),transparent 55%),var(--canvas);background-attachment:fixed;color:var(--ink)}
 h2,.brand-name{font-family:'Space Grotesk','Inter',sans-serif}
 h2{border-left:3px solid var(--accent);color:var(--ink)}
-.card{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0) 40%),var(--card);border-color:var(--line)}
-.topbar{background:rgba(11,16,32,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:none;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.card{background:linear-gradient(180deg,var(--sheen),rgba(255,255,255,0) 40%),var(--card);border-color:var(--line)}
+.topbar{background:var(--topbg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:none;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .topbar::after{content:"";display:block;height:2px;margin-top:12px;background:linear-gradient(90deg,#2dd4bf,#4f6df5,#7e22ce);opacity:.9;position:absolute;left:0;right:0;bottom:-1px}
 .topbar .wknum,.topbar .brand-name{color:var(--ink)}
 .brand-sub{color:var(--sub)}
 .brand-badge{background:linear-gradient(135deg,#2dd4bf,#4f6df5 60%,#7e22ce)}
-.langsw{background:rgba(255,255,255,.06)}
-.langsw button.on{background:#26314b;box-shadow:none}
-input,select,textarea{background:#0e1527;color:var(--ink);border-color:var(--line)}
-input::placeholder,textarea::placeholder{color:#5d6b8a}
+.langsw,.themesw{background:var(--sw)}
+.langsw button.on{background:var(--swon);box-shadow:none}
+.themesw{display:flex;gap:4px;align-items:center;border-radius:30px;padding:4px}
+.themesw button{background:transparent;border:none;border-radius:24px;width:34px;height:30px;min-height:0!important;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;opacity:.55;filter:grayscale(40%);color:var(--ink)}
+.themesw button.on{background:var(--swon);opacity:1;filter:none;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.themesw button:hover{filter:none;opacity:.9}
+.logincard .themesw{width:max-content;margin:14px auto 0}
+input,select,textarea{background:var(--surf3);color:var(--ink);border-color:var(--line)}
+input::placeholder,textarea::placeholder{color:var(--ph)}
 input:focus,select:focus{outline:2px solid var(--brand);outline-offset:1px;border-color:transparent}
 button{background:var(--brand);color:#fff}
-button:hover{filter:brightness(1.12)}
-button.sec{background:#1a2340;color:#c9d4ff;border:1px solid var(--line)}
-button.sec:hover{border-color:var(--brand);background:#202b4d}
-button.active{background:var(--accent);color:#062b27}
-th{background:#182140;color:var(--ink)}
-th.conflict{background:var(--conflict);color:#ffd873}
+button:hover{filter:brightness(1.1)}
+button.sec{background:var(--surf2);color:var(--surf2ink);border:1px solid var(--line)}
+button.sec:hover{border-color:var(--brand);background:var(--surf2h)}
+button.active{background:var(--accent);color:var(--activeink)}
+th{background:var(--th);color:var(--ink)}
+th.conflict{background:var(--conflict);color:var(--conflictink)}
 td,th{border-color:var(--line)}
-.director-row{background:#33290e;color:#ffe3a0}
-.deputy-row{background:#2a2410;color:#ffe9b8}
-.adm-row{background:#14213f}
+.director-row{background:var(--dirbg);color:var(--dirink)}
+.deputy-row{background:var(--depbg);color:var(--depink)}
+.adm-row{background:var(--admbg);color:var(--admink)}
+.director-row td:not([class]),.director-row td.total{color:var(--dirink)}
+.deputy-row td:not([class]),.deputy-row td.total{color:var(--depink)}
+.adm-row td:not([class]),.adm-row td.total{color:var(--admink)}
+table.sched .director-row td.total,table.sched .deputy-row td.total{background:var(--card)}
+.emp-table .director-row td:first-child{box-shadow:inset 4px 0 0 var(--dirbar)}
+.emp-table .deputy-row td:first-child{box-shadow:inset 4px 0 0 var(--depbar)}
+.emp-table .adm-row td:first-child{box-shadow:inset 4px 0 0 var(--admbar)}
 table.sched td:first-child,table.sched th:first-child{background:var(--card)}
-table.sched th:first-child{background:#182140}
-table.sched .director-row td:first-child{background:#33290e}
-table.sched .deputy-row td:first-child{background:#2a2410}
-table.sched .adm-row td:first-child{background:#14213f}
-.tag{background:#1a2340}
-.R select.cell,.R{background:var(--r);color:#7d8aa8}
+table.sched th:first-child{background:var(--th)}
+table.sched .director-row td:first-child{background:var(--dirbg);box-shadow:inset 4px 0 0 var(--dirbar),1px 0 0 var(--line)}
+table.sched .deputy-row td:first-child{background:var(--depbg);box-shadow:inset 4px 0 0 var(--depbar),1px 0 0 var(--line)}
+table.sched .adm-row td:first-child{background:var(--admbg);box-shadow:inset 4px 0 0 var(--admbar),1px 0 0 var(--line)}
+.tag{background:var(--surf2);color:var(--ink)}
+.R select.cell,.R{background:var(--r);color:var(--rink)}
 .wkoff{outline:2px solid var(--wk)}
-.badge.wkred{background:#3a1a24;color:#ff9aa8}
-.badge{background:#2a1f4d;color:#cdb8ff}
-.wknum{background:#1d2748;color:#c9d4ff}
-.info{background:#2e2610;color:#ffd98a}
-.cfield{background:#0e1527;border-color:var(--line)}
-.note{background:#10302b;color:#7ff0d8}
-.okmsg{color:#5ee9b5}
-textarea.ev{background:#0e1527;color:var(--ink);border-color:var(--line)}
-.loginwrap{background:radial-gradient(900px 500px at 80% 0%,rgba(79,109,245,.25),transparent 60%),radial-gradient(700px 400px at 0% 100%,rgba(45,212,191,.16),transparent 60%),#0b1020}
-.logincard{background:#131a2e;border:1px solid var(--line);box-shadow:0 24px 70px rgba(0,0,0,.55);color:var(--ink)}
-.legalmodal{background:rgba(5,8,18,.7)}
-.legalmodal-box{background:#131a2e;color:var(--ink);border:1px solid var(--line)}
+.badge.wkred{background:var(--wkredbg);color:var(--wkredink)}
+.badge{background:var(--badgebg);color:var(--badgeink)}
+.wknum{background:var(--wknumbg);color:var(--wknumink)}
+.info{background:var(--infobg);color:var(--infoink)}
+.cfield{background:var(--surf3);border-color:var(--line)}
+.note{background:var(--notebg);color:var(--noteink)}
+.okmsg{color:var(--okc)}
+textarea.ev{background:var(--surf3);color:var(--ink);border-color:var(--line)}
+.loginwrap{background:radial-gradient(900px 500px at 80% 0%,var(--glow1),transparent 60%),radial-gradient(700px 400px at 0% 100%,var(--glow2),transparent 60%),var(--canvas)}
+.logincard{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);color:var(--ink)}
+.legalmodal{background:var(--overlay)}
+.legalmodal-box{background:var(--card);color:var(--ink);border:1px solid var(--line)}
 .pf-av{background:linear-gradient(135deg,#2dd4bf,#4f6df5)}
-a{color:#8fb0ff}
+a{color:var(--link)}
 .legalfooter a,.legalfooter{color:var(--sub)}
 @media print{
-  :root{--bg:#fff;--canvas:#fff;--card:#fff;--ink:#000;--sub:#444;--line:#bbb}
+  html[data-theme]{--canvas:#fff;--card:#fff;--ink:#000;--sub:#444;--line:#bbb}
   body{background:#fff!important;color:#000}
   .card{background:#fff!important}
   th{background:#eee!important;color:#000!important}
   td{color:#000}
   input,select,textarea{background:#fff!important;color:#000!important}
+  .themesw{display:none!important}
 }
 </style>
 </head>
@@ -256,6 +296,11 @@ a{color:#8fb0ff}
     <button id="loginBtn" onclick="doLogin()" style="width:100%">Se connecter</button>
     <div style="text-align:center;margin-top:12px"><a href="#" onclick="showReset(1);return false" style="font-size:13px;color:var(--accent)">Mot de passe oublié ?</a></div>
     <div id="loginErr" style="color:var(--accent);font-size:12.5px;margin-top:10px;text-align:center;min-height:16px"></div>
+    <div class="themesw" role="group" aria-label="Thème">
+      <button type="button" data-t="light" title="Thème clair" aria-label="Thème clair" onclick="setTheme('light')">☀️</button>
+      <button type="button" data-t="mid" title="Thème intermédiaire" aria-label="Thème intermédiaire" onclick="setTheme('mid')">🌗</button>
+      <button type="button" data-t="dark" title="Thème sombre" aria-label="Thème sombre" onclick="setTheme('dark')">🌙</button>
+    </div>
   </div>
   <div class="logincard" id="resetCard" style="display:none">
     <div class="brand-badge" style="margin:0 auto 14px">M</div>
@@ -296,6 +341,11 @@ a{color:#8fb0ff}
     <div class="topbar-right">
       <span class="wknum" id="syncStatus" style="font-size:11.5px"></span>
       <button class="sec small" id="acctLabel" onclick="openProfile()" title="Mon profil"></button>
+      <div class="themesw" role="group" aria-label="Thème">
+        <button type="button" data-t="light" title="Thème clair" aria-label="Thème clair" onclick="setTheme('light')">☀️</button>
+        <button type="button" data-t="mid" title="Thème intermédiaire" aria-label="Thème intermédiaire" onclick="setTheme('mid')">🌗</button>
+        <button type="button" data-t="dark" title="Thème sombre" aria-label="Thème sombre" onclick="setTheme('dark')">🌙</button>
+      </div>
       <div class="langsw" style="display:none" aria-hidden="true">
         <button id="langFr" title="Français" onclick="setLang('fr')">🇫🇷</button>
         <button id="langEn" title="English" onclick="setLang('en')">🇬🇧</button>
@@ -316,7 +366,6 @@ a{color:#8fb0ff}
     <div><button class="sec" onclick="toggleWeeks()">Choix de semaine</button></div>
   </div>
   <div id="weeksPicker"></div>
-  <div class="hint">Cochez "Vacances" sur une semaine pour que les contraintes "sauf pendant les vacances" ne s'appliquent pas cette semaine-là (l'employé passe alors sur son régime "semaine exceptionnelle").</div>
   <div class="hint" id="restoAddr"></div>
 </div>
 
@@ -2449,6 +2498,15 @@ function applyBrand(){
 applyBrand();
 
 /* ============ INIT ============ */
+/* ---- Thèmes : clair / intermédiaire / sombre (mémorisé sur l'appareil) ---- */
+function setTheme(t){
+  if(!['light','mid','dark'].includes(t)) t='dark';
+  document.documentElement.setAttribute('data-theme',t);
+  try{ localStorage.setItem('edgTheme',t); }catch(e){}
+  document.querySelectorAll('.themesw button[data-t]').forEach(b=>{ const on=b.dataset.t===t; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false'); });
+  const m=document.querySelector('meta[name="theme-color"]'); if(m) m.setAttribute('content',{light:'#f2f5fb',mid:'#2b3556',dark:'#0b1020'}[t]);
+}
+try{ setTheme(localStorage.getItem('edgTheme')||'dark'); }catch(e){ setTheme('dark'); }
 setLang('fr');
 if(!handleRecoveryHash()) resumeSession();
 if("serviceWorker" in navigator && location.protocol.indexOf("http")===0){ window.addEventListener("load",function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); }); }
